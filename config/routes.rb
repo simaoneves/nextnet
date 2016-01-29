@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'login' => 'sessions#login'
-  get 'signup' => 'sessions#signup'
-  get 'logout' => 'sessions#logout'
+  get  'login'  => 'sessions#new'
+  post 'login'  => 'sessions#login'
+  post 'logout' => 'sessions#logout'
 
   #defining root
   root 'home#index'
@@ -11,7 +11,17 @@ Rails.application.routes.draw do
   get 'messages/:to_id' => 'messages#new'
   resources :messages
   resources :users
+  get 'signup' => 'users#new'
+
+  #matches TO DO
+  #get 'matches'        => 'matches#index'
+  #get 'matches/filter' => 'matches#filter'
+
+  #punches
   resources :punches
+  get 'punches' => 'punches#index'
+
+  #interests
   resources :interests
 
   # The priority is based upon order of creation: first created -> highest priority.

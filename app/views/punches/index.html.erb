@@ -1,0 +1,22 @@
+<h1>
+  These person just punched you
+</h1>
+
+<% @punches.each do |p| puncher = get_user_by_id(p.user_id) %>
+  
+  <div class="col-xs-12 well">
+      
+    <table class="table">
+      <tr>
+        <td>
+          <%= puncher.name %>
+        </td>
+        <td>
+          <%= link_to 'Punch back' %>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+
+<% end %>
