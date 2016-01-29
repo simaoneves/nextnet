@@ -1,2 +1,8 @@
 <h1>Interests#new</h1>
-<p>Find me in app/views/interests/new.html.erb</p>
+<p>New Interest</p>
+
+<%= form_for @interest, url: {action: "create"} do |f| %>
+  <%= f.text_field :name %>
+  <%= f.hidden_field :user_id, :value => @user.id %>
+  <%= f.submit "Create" %>
+<% end %>

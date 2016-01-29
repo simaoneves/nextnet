@@ -1,0 +1,15 @@
+<h1>User: <%= @user.name %></h1>
+<p>User interests:</p>
+
+<ul>
+  <% @user.interests.each do |interest| %>
+    <li>
+      <%= interest.name %>, <%= link_to 'Edit', controller: 'interests', action: 'edit' if @user.id == session[:user_id] %>
+    </li>
+  <% end %>
+</ul>
+
+
+<% if @user.id == session[:user_id] %>
+  <%= link_to 'Add Interest', controller: 'interests', action: 'new' %>
+<% end %>
