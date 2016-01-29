@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'sessions/login'
-
-  get 'sessions/signup'
-
-  get 'sessions/logout'
+  get 'login' => 'sessions#login'
+  get 'signup' => 'sessions#signup'
+  get 'logout' => 'sessions#logout'
 
   #defining root
   root 'home#index'
