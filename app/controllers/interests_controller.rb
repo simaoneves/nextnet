@@ -2,6 +2,7 @@ class InterestsController < ApplicationController
 
   def new
     @interest = Interest.new
+    @user = current_user
   end
 
   def create
@@ -24,6 +25,6 @@ class InterestsController < ApplicationController
   private
 
     def interests_params
-      
+      params.require(:interest).permit(:name, :user_id)
     end
 end

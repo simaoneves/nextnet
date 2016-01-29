@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'sessions/login'
+
+  get 'sessions/signup'
+
+  get 'sessions/logout'
+
   #defining root
   root 'home#index'
 
