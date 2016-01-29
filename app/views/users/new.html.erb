@@ -1,0 +1,17 @@
+<h1>
+  Signup
+</h1>
+
+<div class="row">
+  
+  <%= form_for @user do |usr| %>
+    
+    <%= usr.label :name %>: <%= usr.text_field :name %><br>
+    <%= usr.label :email %>: <%= usr.email_field :email %><br>
+    <%= usr.label :password %>: <%= usr.password_field :password %><br>
+    <%= usr.label :password_confirmation %>: <%= usr.password_field :password_confirmation %><br>
+    <%= usr.submit 'Signup' %>
+
+  <% end %>
+
+</div>
