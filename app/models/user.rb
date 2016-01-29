@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  has_many :interests
+  
   #valid formats
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -11,5 +13,4 @@ class User < ActiveRecord::Base
   validates :password, confirmation: true
 
   has_secure_password
-
 end

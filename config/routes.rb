@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
 
+  get 'sessions/login'
+
+  get 'sessions/signup'
+
+  get 'sessions/logout'
+
   #defining root
   root 'home#index'
 
   #users
   resources :users
   resources :punches
+  resources :interests
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
