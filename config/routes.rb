@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   root 'home#index'
 
   #users
+  get 'messages/:to_id' => 'messages#new'
+  resources :messages
   resources :users
   resources :punches
   resources :interests

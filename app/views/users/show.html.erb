@@ -13,3 +13,4 @@
 <% if @user.id == session[:user_id] %>
   <%= link_to 'Add Interest', controller: 'interests', action: 'new' %>
 <% end %>
+<%= link_to 'Send message', controller: 'messages', action: 'index' %>

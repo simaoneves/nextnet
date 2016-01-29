@@ -11,8 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160129145414) do
+ActiveRecord::Schema.define(version: 20160129162021) do
+
+  create_table "interests", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "message"
+    t.integer  "from"
+    t.integer  "to"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "punches", force: :cascade do |t|
     t.datetime "created_at"
@@ -20,15 +34,6 @@ ActiveRecord::Schema.define(version: 20160129145414) do
     t.integer  "user_id"
     t.integer  "user_punched"
     t.integer  "punched_back"
-=======
-ActiveRecord::Schema.define(version: 20160129150616) do
-
-  create_table "interests", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "user_id"
->>>>>>> 75c234586d50906509894eeb88d96752a0fea2f2
   end
 
   create_table "users", force: :cascade do |t|
