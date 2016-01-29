@@ -10,10 +10,14 @@ Rails.application.routes.draw do
   #users
   resources :users
   get 'signup' => 'users#new'
-  get 'signin' => 'sessions#new'
+
+  #matches TO DO
+  #get 'matches'        => 'matches#index'
+  #get 'matches/filter' => 'matches#filter'
 
   #punches
   resources :punches
+  get 'punches' => 'punches#index'
 
   #interests
   resources :interests
