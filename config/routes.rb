@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'login' => 'sessions#login'
-  get 'logout' => 'sessions#logout'
+  get  'login'  => 'sessions#new'
+  post 'login'  => 'sessions#login'
+  post 'logout' => 'sessions#logout'
 
   #defining root
   root 'home#index'
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   #users
   resources :users
   get 'signup' => 'users#new'
+  get 'signin' => 'sessions#new'
 
   #punches
   resources :punches
