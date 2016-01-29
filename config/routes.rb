@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   #users
   resources :users
+  resources :punches
   resources :interests
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -201,6 +201,35 @@ AbstractController::ActionNotFound (The action 'show' could not be found for Use
   Rendered /Users/JoaoRodrigues/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
   Rendered /Users/JoaoRodrigues/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.7ms)
   Rendered /Users/JoaoRodrigues/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (493.6ms)
+<<<<<<< HEAD
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePunch (20160129144231)
+  [1m[35m (0.3ms)[0m  begin transaction
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/JoaoRodrigues/Desktop/nextnet/nextnet/db/migrate/20160129144231_create_punch.rb:4)
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "punches" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160129144231"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mPunch Load (7.1ms)[0m  [1mSELECT "punches".* FROM "punches"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPunchUser (20160129145047)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (2.7ms)[0m  [1mALTER TABLE "punches" ADD "user_id" integer[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "punches" ADD "user_punched" integer
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160129145047"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mPunch Load (6.2ms)[0m  [1mSELECT "punches".* FROM "punches"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPunchBack (20160129145414)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (1.6ms)[0m  [1mALTER TABLE "punches" ADD "punched_back" integer[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160129145414"]]
+  [1m[36m (3.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mPunch Load (4.2ms)[0m  [1mSELECT "punches".* FROM "punches"[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+=======
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Migrating to CreateInterests (20160129143643)
   [1m[35m (0.2ms)[0m  begin transaction
@@ -553,6 +582,7 @@ ActiveRecord::RecordNotFound - Couldn't find User with 'id'=:
 
 Started POST "/__better_errors/a711615493d09a74/variables" for ::1 at 2016-01-29 15:20:24 +0000
   [1m[36mUser Load (2.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+<<<<<<< HEAD
 
 
 Started GET "/interests/new" for ::1 at 2016-01-29 15:26:16 +0000
@@ -2987,3 +3017,6 @@ Processing by UsersController#show as HTML
   [1m[36mInterest Load (0.2ms)[0m  [1mSELECT "interests".* FROM "interests" WHERE "interests"."user_id" = ?[0m  [["user_id", 1]]
   Rendered users/show.html.erb within layouts/application (15.9ms)
 Completed 200 OK in 654ms (Views: 615.8ms | ActiveRecord: 2.0ms)
+=======
+>>>>>>> 75c234586d50906509894eeb88d96752a0fea2f2
+>>>>>>> 81bdb60e3ea2035d16b25232783a6614cf6e608d
